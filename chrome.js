@@ -89,7 +89,7 @@ function Contact({ id }) {
 <div style={{ maxWidth: 'var(--container-narrow)', margin: '0 auto', textAlign: 'center' }}>
 <div className="andolini-overline" style={{ color: 'var(--sand-400)', marginBottom: 'var(--space-5)' }}>Наши бутики</div>
 <h2 style={{ fontSize: 'clamp(28px,5vw,64px)', fontWeight: 400, lineHeight: 1.05, color: 'var(--sand-50)',
-           letterSpacing: '0.02em' }}>Приходите<br/>примерить.</h2>
+           letterSpacing: '0.02em' }}>Visit a showroom<br/>to order.</h2>
 <p style={{ marginTop: 'var(--space-6)', color: 'var(--stone-300)', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto',
           fontSize: 'clamp(14px,2vw,17px)' }}>
 Ждём вас в наших бутиках в Астане и Алматы — ежедневно с 10:00 до 22:00.
