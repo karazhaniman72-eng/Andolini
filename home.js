@@ -3,6 +3,24 @@ function Home({ onOpen, jumpRef }) {
   const Plate = window.KitPlate;
   const works = window.KIT_WORKS;
 
+  React.useEffect(() => {
+    const updateShowroomCopy = () => {
+      const footer = document.getElementById('contact');
+      if (!footer) return;
+      const overline = footer.querySelector('.andolini-overline');
+      const heading = footer.querySelector('h2');
+      const text = footer.querySelector('p');
+      const action = footer.querySelector('a[href^="mailto:"][style*="margin-top"]');
+      if (overline) overline.textContent = 'Order our costumes';
+      if (heading) heading.innerHTML = 'Visit a showroom<br>to order.';
+      if (text) text.textContent = 'Come by any of our ateliers for fittings and to place an order, or write to us and we’ll arrange your commission.';
+      if (action) action.textContent = 'Place an order';
+    };
+    updateShowroomCopy();
+    const timer = window.setTimeout(updateShowroomCopy, 120);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
   <div>
 {/* HERO */}
