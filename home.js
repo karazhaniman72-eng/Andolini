@@ -6,14 +6,14 @@ function Home({ onOpen, jumpRef }) {
 return (
   <div>
 {/* HERO — the logo is the hero */}
-  <section style={{ position: 'relative', minHeight: '100vh', marginTop: -64,
+  <section style={{ position: 'relative', minHeight: '100vh', marginTop: -64, overflow: 'hidden',
                   background: 'linear-gradient(165deg, #DACBAE 0%, #CEBEA6 52%, #B9A687 100%)',
                   display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
                   padding: '0 var(--space-5)' }}>
 {/* HQ logo — cropped to circle, no dark square border */}
 <img src="andolini_logo_hq.png" alt="Andolini"
-style={{ width: 'min(420px, 72vw)', height: 'min(420px, 72vw)', borderRadius: '50%',
-       objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+style={{ width: '100%', height: '100%',
+       objectFit: 'cover', objectPosition: 'center', position: 'absolute', inset: 0 }} />
 <div className="andolini-overline" style={{ color: 'rgba(255,255,255,0.82)', marginTop: 'var(--space-6)' }}>
 Costume Atelier &middot; Firenze
   </div>
