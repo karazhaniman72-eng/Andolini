@@ -1,41 +1,64 @@
 // Andolini — four collections. Tap one to scroll through its photos.
 //
-// ════════════════════════════════════════════════════════════════════
-// ✦✦ YOUR PHOTOS GO HERE ✦✦
-// ────────────────────────────────────────────────────────────────────
 // Each collection has:
-//   cover  → the photo on the front-page card
-//   shots  → the photos shown when you tap that card (the gallery)
+//   cover → the photo shown on the front-page card
+//   shots → the photos shown in the gallery when you tap that card
 //
-// HOW TO ADD A PHOTO:
-//   1) Drop your image file into the  images/  folder
-//      (e.g. images/costumes-1.jpg)
-//   2) Replace a gradient string below with:
-//          "url('images/costumes-1.jpg') center/cover no-repeat"
-//
-// Example — Costumes cover using a real photo:
-//          cover: "url('images/costumes-1.jpg') center/cover no-repeat",
-//
-// Any gradient you don't replace simply stays as a coloured tile.
-// ════════════════════════════════════════════════════════════════════
-const KIT_WORKS = [
-  { id: 'costumes', name: 'Costumes', tagline: 'Stage & screen wardrobe',
-    cover: 'linear-gradient(150deg,#DACBAE,#9C8A6C)',   // ← front-page card photo
-    shots: [                                            // ← gallery photos for "Costumes"
-      'linear-gradient(150deg,#DACBAE,#9C8A6C)','linear-gradient(160deg,#E8DCC8,#B9A687)','linear-gradient(140deg,#CEBEA6,#786A51)','linear-gradient(150deg,#F3ECE0,#CEBEA6)','linear-gradient(160deg,#B9A687,#54493A)'] },
-  { id: 'casual', name: 'Casual', tagline: 'Footwear, handmade',
-    cover: 'linear-gradient(150deg,#CEBEA6,#786A51)',   // ← front-page card photo
-    shots: [                                            // ← gallery photos for "Casual"
-      'linear-gradient(150deg,#CEBEA6,#786A51)','linear-gradient(150deg,#B9A687,#54493A)','linear-gradient(160deg,#DACBAE,#9C8A6C)','linear-gradient(140deg,#E8DCC8,#B9A687)'] },
+// Photos live in the repository root. To swap a photo, replace the
+// filename below (filenames are case-sensitive on the live site).
 
-{ id: 'sport', name: 'Sport', tagline: 'Performance & tailored athletic',
-    cover: 'linear-gradient(150deg,#E8DCC8,#B9A687)',   // ← front-page card photo
-    shots: [                                            // ← gallery photos for "Sport"
-      'linear-gradient(150deg,#E8DCC8,#B9A687)','linear-gradient(150deg,#DACBAE,#786A51)','linear-gradient(160deg,#CEBEA6,#9C8A6C)','linear-gradient(140deg,#F3ECE0,#DACBAE)'] },
-  { id: 'accessories', name: 'Accessories', tagline: 'Bags, scarves & jewellery',
-    cover: 'linear-gradient(150deg,#F3ECE0,#CEBEA6)',   // ← front-page card photo
-    shots: [                                            // ← gallery photos for "Accessories"
-      'linear-gradient(150deg,#F3ECE0,#CEBEA6)','linear-gradient(150deg,#E8DCC8,#B9A687)','linear-gradient(160deg,#DACBAE,#9C8A6C)','linear-gradient(150deg,#CEBEA6,#786A51)'] },
+const KIT_WORKS = [
+  {
+    id: 'costumes',
+    name: 'Costumes',
+    tagline: 'Stage & screen wardrobe',
+    cover: "url('Costumes1.jpg') center/cover no-repeat",
+    shots: [
+      "url('Costumes1.jpg') center/cover no-repeat",
+      "url('costumes2.jpg') center/cover no-repeat",
+      "url('Costumes3.jpg') center/cover no-repeat",
+      "url('Costumes4.jpg') center/cover no-repeat",
+      "url('Costumes5.jpg') center/cover no-repeat",
+    ],
+  },
+  {
+    id: 'casual',
+    name: 'Casual',
+    tagline: 'Everyday tailoring',
+    cover: "url('Casual1.jpg') center/cover no-repeat",
+    shots: [
+      "url('Casual1.jpg') center/cover no-repeat",
+      "url('Casual2.jpg') center/cover no-repeat",
+      "url('Casual3.jpg') center/cover no-repeat",
+      "url('Casual4.jpg') center/cover no-repeat",
+      "url('Casual5.PNG') center/cover no-repeat",
+    ],
+  },
+  {
+    id: 'sport',
+    name: 'Sport',
+    tagline: 'Performance & tailored athletic',
+    cover: "url('sport1.jpg') center/cover no-repeat",
+    shots: [
+      "url('sport1.jpg') center/cover no-repeat",
+      "url('sport2.jpg') center/cover no-repeat",
+      "url('sport3.jpg') center/cover no-repeat",
+      "url('sport4.jpg') center/cover no-repeat",
+    ],
+  },
+  {
+    id: 'more',
+    name: 'More from us',
+    tagline: 'Bags, scarves & jewellery',
+    cover: "url('More1.jpg') center/cover no-repeat",
+    shots: [
+      "url('More1.jpg') center/cover no-repeat",
+      "url('More2.jpg') center/cover no-repeat",
+      "url('More3.jpg') center/cover no-repeat",
+      "url('More4.jpg') center/cover no-repeat",
+      "url('More5.jpg') center/cover no-repeat",
+    ],
+  },
 ];
 
 function Plate({ tone, children, style }) {
