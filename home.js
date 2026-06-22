@@ -4,9 +4,10 @@ function Home({ onOpen, jumpRef }) {
   const works = window.KIT_WORKS;
 
   React.useEffect(() => {
-    const updateShowroomCopy = () => {
+    const updateContact = () => {
       const footer = document.getElementById('contact');
       if (!footer) return;
+
       const overline = footer.querySelector('.andolini-overline');
       const heading = footer.querySelector('h2');
       const text = footer.querySelector('p');
@@ -15,9 +16,24 @@ function Home({ onOpen, jumpRef }) {
       if (heading) heading.innerHTML = 'Visit a showroom<br>to order.';
       if (text) text.textContent = 'Come by any of our ateliers for fittings and to place an order, or write to us and we’ll arrange your commission.';
       if (action) action.textContent = 'Place an order';
+
+      const instagram = footer.querySelector('a[href*="instagram.com"]');
+      if (instagram && !footer.dataset.localInstagrams) {
+        const textNode = Array.from(instagram.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+        instagram.href = 'https://instagram.com/andolini_astana';
+        if (textNode) textNode.nodeValue = ' @andolini_astana';
+
+        const almaty = instagram.cloneNode(true);
+        almaty.href = 'https://instagram.com/andolini_almaty';
+        const almatyText = Array.from(almaty.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+        if (almatyText) almatyText.nodeValue = ' @andolini_almaty';
+        instagram.after(almaty);
+        footer.dataset.localInstagrams = 'true';
+      }
     };
-    updateShowroomCopy();
-    const timer = window.setTimeout(updateShowroomCopy, 120);
+
+    updateContact();
+    const timer = window.setTimeout(updateContact, 120);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -28,19 +44,10 @@ function Home({ onOpen, jumpRef }) {
                 background: 'linear-gradient(165deg, #DACBAE 0%, #CEBEA6 52%, #B9A687 100%)',
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
                 padding: '0 var(--space-5)' }}>
-{/* Live wordmark: no image background, so it becomes part of the hero. */}
-<div aria-label="Andolini. Made in Italy." style={{ color: 'var(--white)', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'translateY(-2.5vh)' }}>
-  <div style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300,
-               fontSize: 'clamp(54px, 9vw, 132px)', lineHeight: 0.9,
-               letterSpacing: '0.19em', paddingLeft: '0.19em', whiteSpace: 'nowrap' }}>
-    ANDOLINI
-  </div>
-  <div style={{ marginTop: 'clamp(16px, 2.1vw, 28px)', fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 400,
-               fontSize: 'clamp(14px, 2.4vw, 38px)', lineHeight: 1,
-               letterSpacing: '0.43em', paddingLeft: '0.43em', whiteSpace: 'nowrap' }}>
-    MADE IN ITALY
-  </div>
-</div>
+{/* Exact supplied logo artwork, with its beige rectangle removed in the SVG filter. */}
+<img src="andolini_logo_clean.svg" alt="Andolini — Made in Italy" style={{
+  width: 'min(1600px, 88vw)', height: 'auto', display: 'block', transform: 'translateY(-2.5vh)'
+}} />
 <div className="andolini-overline" style={{ color: 'rgba(255,255,255,0.82)', marginTop: 'var(--space-7)' }}>
 Costume Atelier &middot; Firenze
 </div>
