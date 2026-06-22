@@ -11,11 +11,11 @@ function Home({ onOpen, jumpRef }) {
       const overline = footer.querySelector('.andolini-overline');
       const heading = footer.querySelector('h2');
       const text = footer.querySelector('p');
-      const action = footer.querySelector('a[href^="mailto:"][style*="margin-top"]');
       if (overline) overline.textContent = 'Order our costumes';
       if (heading) heading.innerHTML = 'Visit a showroom<br>to order.';
       if (text) text.textContent = 'Come by any of our ateliers for fittings and to place an order, or write to us and we’ll arrange your commission.';
-      if (action) action.textContent = 'Place an order';
+
+      footer.querySelectorAll('a[href^="mailto:"]').forEach((node) => node.remove());
 
       const instagram = footer.querySelector('a[href*="instagram.com"]');
       if (instagram && !footer.dataset.localInstagrams) {
@@ -41,11 +41,11 @@ function Home({ onOpen, jumpRef }) {
   <div>
 {/* HERO */}
 <section style={{ position: 'relative', minHeight: '100vh', marginTop: -64, overflow: 'hidden',
-                background: 'linear-gradient(165deg, #DACBAE 0%, #CEBEA6 52%, #B9A687 100%)',
+                background: '#D6C5AA',
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
                 padding: '0 var(--space-5)' }}>
-{/* Exact supplied logo artwork, with its beige rectangle removed in the SVG filter. */}
-<img src="andolini_logo_clean.svg" alt="Andolini — Made in Italy" style={{
+{/* Original supplied logo. The hero background exactly matches the logo's background. */}
+<img src="andolini_logo_hq.png" alt="Andolini — Made in Italy" style={{
   width: 'min(1600px, 88vw)', height: 'auto', display: 'block', transform: 'translateY(-2.5vh)'
 }} />
 <div className="andolini-overline" style={{ color: 'rgba(255,255,255,0.82)', marginTop: 'var(--space-7)' }}>
