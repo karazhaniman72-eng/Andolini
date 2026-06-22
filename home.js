@@ -1,38 +1,46 @@
-// Andolini — single-page calling card: Hero (logo) · Collections · Photo banner · Contact
+// Andolini — single-page calling card: Hero · Collections · Photo banner · Contact
 function Home({ onOpen, jumpRef }) {
   const Plate = window.KitPlate;
   const works = window.KIT_WORKS;
 
-return (
+  return (
   <div>
-{/* HERO — the logo is the hero */}
-  <section style={{ position: 'relative', minHeight: '100vh', marginTop: -64, overflow: 'hidden',
-                  background: 'linear-gradient(165deg, #DACBAE 0%, #CEBEA6 52%, #B9A687 100%)',
-                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
-                  padding: '0 var(--space-5)' }}>
-{/* HQ logo — cropped to circle, no dark square border */}
-<img src="andolini_logo_hq.png" alt="Andolini"
-style={{ width: '100vw', maxWidth: '1400px', height: 'auto',
-       display: 'block' }} />
-<div className="andolini-overline" style={{ color: 'rgba(255,255,255,0.82)', marginTop: 'var(--space-6)' }}>
-Costume Atelier &middot; Firenze
+{/* HERO */}
+<section style={{ position: 'relative', minHeight: '100vh', marginTop: -64, overflow: 'hidden',
+                background: 'linear-gradient(165deg, #DACBAE 0%, #CEBEA6 52%, #B9A687 100%)',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
+                padding: '0 var(--space-5)' }}>
+{/* Live wordmark: no image background, so it becomes part of the hero. */}
+<div aria-label="Andolini. Made in Italy." style={{ color: 'var(--white)', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'translateY(-2.5vh)' }}>
+  <div style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300,
+               fontSize: 'clamp(54px, 9vw, 132px)', lineHeight: 0.9,
+               letterSpacing: '0.19em', paddingLeft: '0.19em', whiteSpace: 'nowrap' }}>
+    ANDOLINI
   </div>
+  <div style={{ marginTop: 'clamp(16px, 2.1vw, 28px)', fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 400,
+               fontSize: 'clamp(14px, 2.4vw, 38px)', lineHeight: 1,
+               letterSpacing: '0.43em', paddingLeft: '0.43em', whiteSpace: 'nowrap' }}>
+    MADE IN ITALY
+  </div>
+</div>
+<div className="andolini-overline" style={{ color: 'rgba(255,255,255,0.82)', marginTop: 'var(--space-7)' }}>
+Costume Atelier &middot; Firenze
+</div>
 <button onClick={() => jumpRef('work')} aria-label="View work" style={{
   position: 'absolute', bottom: 36, color: 'var(--white)', background: 'none', border: 'none',
   cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
   fontFamily: 'var(--font-display)', fontSize: 11, letterSpacing: '0.28em', textTransform: 'uppercase' }}>
 View work <window.KitIcon.ArrowDown/>
-  </button>
-  </section>
+</button>
+</section>
 
 {/* WORK — four collections in a row */}
 <section id="work" style={{ padding: 'var(--space-9) 0 var(--space-10)' }}>
 <div style={{ ...container, marginBottom: 'var(--space-7)' }}>
   <div className="andolini-overline" style={{ marginBottom: 'var(--space-3)' }}>Selected work</div>
 <h2 style={{ fontSize: 'clamp(28px, 5vw, var(--fs-h2))', fontWeight: 400 }}>Our costumes</h2>
-  </div>
-<div style={{ ...container, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}
-className="kit-collections">
+</div>
+<div style={{ ...container, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }} className="kit-collections">
 {works.map((w) => (
   <button key={w.id} onClick={() => onOpen(w)} style={{
   display: 'block', width: '100%', textAlign: 'left', background: 'none', border: 'none',
@@ -53,8 +61,8 @@ className="kit-collections">
   </Plate>
   </button>
 ))}
-  </div>
-  </section>
+</div>
+</section>
 
 {/* PHOTO BANNER — big campaign image */}
 <section id="atelier" style={{ position: 'relative', minHeight: '78vh', display: 'flex',
@@ -69,11 +77,11 @@ className="kit-collections">
            letterSpacing: '0.02em' }}>Dressed in Florence,<br/>seen on every stage.</h2>
 <p style={{ marginTop: 'var(--space-6)', color: 'rgba(250,247,241,0.82)', fontSize: 'clamp(15px,2.5vw,18px)', maxWidth: 460 }}>
 Period tailoring to contemporary campaigns &mdash; built by hand, fitted to your production.
-  </p>
-  </div>
-  </div>
-  </section>
-  </div>
+</p>
+</div>
+</div>
+</section>
+</div>
 );
 }
 
