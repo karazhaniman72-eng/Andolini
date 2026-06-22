@@ -13,7 +13,7 @@ return (
 {/* HQ logo — cropped to circle, no dark square border */}
 <img src="andolini_logo_hq.png" alt="Andolini"
 style={{ width: '100%', height: '100%',
-       objectFit: 'cover', objectPosition: 'center', position: 'absolute', inset: 0 }} />
+       objectFit: 'contain', objectPosition: 'center', position: 'absolute', inset: 0 }} />
 <div className="andolini-overline" style={{ color: 'rgba(255,255,255,0.82)', marginTop: 'var(--space-6)' }}>
 Costume Atelier &middot; Firenze
   </div>
