@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 593" width="2048" height="593">
+  <defs>
+    <filter id="removeBackground" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1.7008 5.7216 0.5776 0 -6.25"/>
+    </filter>
+  </defs>
+  <image href="andolini_logo_hq.png" x="0" y="0" width="2048" height="593" filter="url(#removeBackground)"/>
+</svg>
