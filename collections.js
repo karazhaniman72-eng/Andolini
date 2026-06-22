@@ -23,7 +23,12 @@ const KIT_WORKS = [
     cover: 'linear-gradient(150deg,#DACBAE,#9C8A6C)',   // ← front-page card photo
     shots: [                                            // ← gallery photos for "Costumes"
       'linear-gradient(150deg,#DACBAE,#9C8A6C)','linear-gradient(160deg,#E8DCC8,#B9A687)','linear-gradient(140deg,#CEBEA6,#786A51)','linear-gradient(150deg,#F3ECE0,#CEBEA6)','linear-gradient(160deg,#B9A687,#54493A)'] },
-  { id: 'sport', name: 'Sport', tagline: 'Performance & tailored athletic',
+  { id: 'casual', name: 'Casual', tagline: 'Footwear, handmade',
+    cover: 'linear-gradient(150deg,#CEBEA6,#786A51)',   // ← front-page card photo
+    shots: [                                            // ← gallery photos for "Casual"
+      'linear-gradient(150deg,#CEBEA6,#786A51)','linear-gradient(150deg,#B9A687,#54493A)','linear-gradient(160deg,#DACBAE,#9C8A6C)','linear-gradient(140deg,#E8DCC8,#B9A687)'] },
+
+{ id: 'sport', name: 'Sport', tagline: 'Performance & tailored athletic',
     cover: 'linear-gradient(150deg,#E8DCC8,#B9A687)',   // ← front-page card photo
     shots: [                                            // ← gallery photos for "Sport"
       'linear-gradient(150deg,#E8DCC8,#B9A687)','linear-gradient(150deg,#DACBAE,#786A51)','linear-gradient(160deg,#CEBEA6,#9C8A6C)','linear-gradient(140deg,#F3ECE0,#DACBAE)'] },
@@ -31,10 +36,6 @@ const KIT_WORKS = [
     cover: 'linear-gradient(150deg,#F3ECE0,#CEBEA6)',   // ← front-page card photo
     shots: [                                            // ← gallery photos for "Accessories"
       'linear-gradient(150deg,#F3ECE0,#CEBEA6)','linear-gradient(150deg,#E8DCC8,#B9A687)','linear-gradient(160deg,#DACBAE,#9C8A6C)','linear-gradient(150deg,#CEBEA6,#786A51)'] },
-  { id: 'shoes', name: 'Shoes', tagline: 'Footwear, handmade',
-    cover: 'linear-gradient(150deg,#CEBEA6,#786A51)',   // ← front-page card photo
-    shots: [                                            // ← gallery photos for "Shoes"
-      'linear-gradient(150deg,#CEBEA6,#786A51)','linear-gradient(150deg,#B9A687,#54493A)','linear-gradient(160deg,#DACBAE,#9C8A6C)','linear-gradient(140deg,#E8DCC8,#B9A687)'] },
 ];
 
 function Plate({ tone, children, style }) {
