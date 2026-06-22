@@ -50,7 +50,7 @@ const KIT_WORKS = [
     id: 'more',
     name: 'More from us',
     tagline: 'Bags, scarves & jewellery',
-    cover: "url('More1.jpg') center/cover no-repeat",
+    cover: "url('More1.jpg') top center/cover no-repeat",
     shots: [
       "url('More1.jpg') center/cover no-repeat",
       "url('More2.jpg') center/cover no-repeat",
