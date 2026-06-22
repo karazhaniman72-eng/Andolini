@@ -7,7 +7,7 @@ function Home({ onOpen, jumpRef }) {
     <div>
       {/* HERO — the logo is the hero */}
       <section style={{ position: 'relative', minHeight: '100vh', marginTop: -76,
-        background: "linear-gradient(165deg, rgba(27,24,19,0.30), rgba(27,24,19,0.45)), url('Hero.jpg') center/cover no-repeat",
+        background: 'linear-gradient(165deg, #DACBAE 0%, #CEBEA6 52%, #B9A687 100%)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
         {/* HERO LOGO — the ANDOLINI wordmark lives in js/wordmark.js.
             To use your own logo instead: drop it in images/ (e.g. images/logo.png)
@@ -65,7 +65,7 @@ function Home({ onOpen, jumpRef }) {
       <section id="atelier" style={{ position: 'relative', minHeight: '78vh', display: 'flex',
         alignItems: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%',
-          background: "url('More3.jpg') center/cover no-repeat" }}></div>{/* ← banner photo */}
+          background: "url('Hero.jpg') top center/cover no-repeat" }}></div>{/* ← banner photo */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(27,24,19,0.62), rgba(27,24,19,0.18) 60%, transparent)', pointerEvents: 'none' }}></div>
         <div style={{ position: 'relative', ...container, pointerEvents: 'none' }}>
           <div style={{ maxWidth: 560 }}>
