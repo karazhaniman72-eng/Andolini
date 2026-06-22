@@ -64,10 +64,6 @@ const KIT_WORKS = [
 function Plate({ tone, children, style }) {
   return (
     <div style={{ background: tone, position: 'relative', overflow: 'hidden', ...style }}>
-      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.14 }}>
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(20px,3vw,42px)',
-          letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--white)', paddingLeft: '0.3em' }}>A</span>
-      </div>
       {children}
     </div>
   );
