@@ -37,16 +37,13 @@ function Header({ onJump, transparent }) {
   }}>
 <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 var(--space-5)',
             height: 64, display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center' }}>
-{/* Left nav — hidden on mobile */}
 <nav className="nav-desktop" style={{ display: 'flex', gap: 'var(--space-6)' }}>
 <button onClick={() => handleNav('work')} style={{ ...linkStyle, color: fg }}>Work</button>
 <button onClick={() => handleNav('atelier')} style={{ ...linkStyle, color: fg }}>Atelier</button>
   </nav>
-{/* Logo — center */}
 <button onClick={() => handleNav('top')} style={{
   fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 20, letterSpacing: '0.3em',
   textTransform: 'uppercase', color: fg, background: 'none', border: 'none', cursor: 'pointer', paddingLeft: '0.3em' }}>Andolini</button>
-{/* Right — Contact on desktop, hamburger on mobile */}
 <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 'var(--space-4)' }}>
 <button onClick={() => handleNav('contact')} className="nav-desktop" style={{ ...linkStyle, color: fg }}>Contact</button>
 <button onClick={() => setMenuOpen(!menuOpen)} className="nav-mobile-btn" style={{
@@ -55,7 +52,6 @@ function Header({ onJump, transparent }) {
 </button>
   </div>
   </div>
- {/* Mobile dropdown menu */}
  {menuOpen && (
    <div style={{
    background: 'rgba(250,247,241,0.98)', borderTop: '1px solid var(--border-hairline)',
@@ -70,25 +66,20 @@ function Header({ onJump, transparent }) {
 );
 }
 
-/* ════════════════════════════════════════════════════════════════════
-✦ EDIT YOUR CONTACT DETAILS HERE ✦
-════════════════════════════════════════════════════════════════════ */
-
 const ADDRESSES = [
-  { city: 'Firenze', street: 'Via del Drago 14', zip: '50122 Firenze', tel: '+39 055 211 040' },
-  { city: 'Milano', street: 'Via della Spiga 6', zip: '20121 Milano', tel: '+39 02 760 118' },
-  { city: 'Roma', street: 'Via dei Condotti 9', zip: '00187 Roma', tel: '+39 06 699 230' },
-  { city: 'Napoli', street: 'Via Chiaia 122', zip: '80121 Napoli', tel: '+39 081 405 770' },
+  { city: 'Astana', street: 'ТРЦ Керуен, ул. Достык 9', zip: 'бутик 38, 2 этаж', tel: '+7 700 370-07-07' },
+  { city: 'Almaty', street: 'Достык Плаза', zip: 'Алматы', tel: '+7 747 370-07-07' },
+  { city: 'Almaty', street: 'ТРЦ Mega Alma-Ata, ул. Розыбакиева 263', zip: 'бутик 2-32, 2 этаж', tel: '+7 701 049-07-07' },
   ];
 
 const CONTACT = {
-  instagram: 'andolini',
+  instagram: 'andolini_kz',
   email: 'orders@andolini.it',
 };
 
 const mapsUrl = (a) => ({
-  twogis: 'https://2gis.com/search/' + encodeURIComponent(a.street + ', ' + a.zip),
-  google: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(a.street + ', ' + a.zip),
+  twogis: 'https://2gis.kz/astana/search/' + encodeURIComponent('Andolini ' + a.city),
+  google: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Andolini ' + a.street + ' ' + a.zip),
 });
 
 function Contact({ id }) {
@@ -96,21 +87,20 @@ function Contact({ id }) {
     <footer id={id} style={{ background: 'var(--ink-900)', color: 'var(--sand-50)',
                            padding: 'var(--space-10) var(--space-5) var(--space-7)' }}>
 <div style={{ maxWidth: 'var(--container-narrow)', margin: '0 auto', textAlign: 'center' }}>
-<div className="andolini-overline" style={{ color: 'var(--sand-400)', marginBottom: 'var(--space-5)' }}>Order our costumes</div>
+<div className="andolini-overline" style={{ color: 'var(--sand-400)', marginBottom: 'var(--space-5)' }}>Наши бутики</div>
 <h2 style={{ fontSize: 'clamp(28px,5vw,64px)', fontWeight: 400, lineHeight: 1.05, color: 'var(--sand-50)',
-           letterSpacing: '0.02em' }}>Visit a showroom<br/>to order.</h2>
+           letterSpacing: '0.02em' }}>Приходите<br/>примерить.</h2>
 <p style={{ marginTop: 'var(--space-6)', color: 'var(--stone-300)', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto',
           fontSize: 'clamp(14px,2vw,17px)' }}>
-Come by any of our ateliers for fittings and to place an order, or write to us
-and we&rsquo;ll arrange your commission.
-  </p>
+Ждём вас в наших бутиках в Астане и Алматы — ежедневно с 10:00 до 22:00.
+</p>
   </div>
 
 <div style={{ maxWidth: 'var(--container-max)', margin: 'var(--space-8) auto 0', display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-5)' }} className="kit-addresses">
-{ADDRESSES.map((a) => (
-  <div key={a.city} style={{ borderTop: '1px solid var(--ink-700)', paddingTop: 'var(--space-5)',
-                           display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+            gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-5)' }} className="kit-addresses">
+{ADDRESSES.map((a, i) => (
+  <div key={i} style={{ borderTop: '1px solid var(--ink-700)', paddingTop: 'var(--space-5)',
+                      display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 16, letterSpacing: '0.16em',
                            textTransform: 'uppercase', color: 'var(--sand-400)', marginBottom: 'var(--space-2)' }}>{a.city}</div>
                <a href={mapsUrl(a).twogis} target="_blank" rel="noopener"
@@ -123,7 +113,7 @@ style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'var(--stone
 </a>
 <a href={mapsUrl(a).google} target="_blank" rel="noopener"
 style={{ fontFamily: 'var(--font-display)', fontSize: 11, letterSpacing: '0.16em',
-       textTransform: 'uppercase', color: 'var(--stone-400)' }}>Open in Google Maps ↗</a>
+       textTransform: 'uppercase', color: 'var(--stone-400)' }}>Открыть в Google Maps ↗</a>
   </div>
 ))}
   </div>
@@ -139,7 +129,7 @@ style={{ fontFamily: 'var(--font-display)', fontSize: 11, letterSpacing: '0.16em
   <a href={'mailto:' + CONTACT.email} style={{
   display: 'inline-flex', marginTop: 'var(--space-6)', fontFamily: 'var(--font-display)', fontSize: 13,
   letterSpacing: '0.18em', textTransform: 'uppercase', padding: '16px 40px', background: 'var(--sand-400)',
-  color: 'var(--ink-900)', borderRadius: 'var(--radius-sm)' }}>Place an order</a>
+  color: 'var(--ink-900)', borderRadius: 'var(--radius-sm)' }}>Написать нам</a>
   </div>
   </div>
 <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', marginTop: 'var(--space-9)',
