@@ -68,12 +68,12 @@ function Header({ onJump, transparent }) {
 
 const ADDRESSES = [
   { city: 'Astana', street: 'ТРЦ Керуен, ул. Достык 9', zip: 'бутик 38, 2 этаж', tel: '+7 700 370-07-07' },
-  { city: 'Almaty', street: 'Достык Плаза', zip: 'Алматы', tel: '+7 747 370-07-07' },
+  { city: 'Almaty', street: 'Самал 2, 111', zip: 'Бутик 2-042', tel: '+7 747 370-07-07' },
   { city: 'Almaty', street: 'ТРЦ Mega Alma-Ata, ул. Розыбакиева 263', zip: 'бутик 2-32, 2 этаж', tel: '+7 701 049-07-07' },
   ];
 
 const CONTACT = {
-  instagram: 'andolini_kz',
+  instagram: 'andolini_astana',
   email: 'orders@andolini.it',
 };
 
