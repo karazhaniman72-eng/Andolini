@@ -12,7 +12,7 @@ function Home({ onOpen, jumpRef }) {
       const heading = footer.querySelector('h2');
       const text = footer.querySelector('p');
       if (overline) overline.textContent = 'Order our costumes';
-      if (heading) heading.innerHTML = 'Visit a showroom<br>to order.';
+      if (heading) heading.innerHTML = 'Visit our boutiques';
       if (text) text.textContent = 'Come by any of our ateliers for fittings and to place an order, or write to us and we’ll arrange your commission.';
 
       footer.querySelectorAll('a[href^="mailto:"]').forEach((node) => node.remove());
@@ -22,12 +22,6 @@ function Home({ onOpen, jumpRef }) {
         const textNode = Array.from(instagram.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
         instagram.href = 'https://instagram.com/andolini_astana';
         if (textNode) textNode.nodeValue = ' @andolini_astana';
-
-        const almaty = instagram.cloneNode(true);
-        almaty.href = 'https://instagram.com/andolini_almaty';
-        const almatyText = Array.from(almaty.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
-        if (almatyText) almatyText.nodeValue = ' @andolini_almaty';
-        instagram.after(almaty);
         footer.dataset.localInstagrams = 'true';
       }
     };
@@ -99,9 +93,9 @@ View work <window.KitIcon.ArrowDown/>
 <div style={{ maxWidth: 560 }}>
 <div className="andolini-overline" style={{ color: 'var(--sand-400)', marginBottom: 'var(--space-5)' }}>The Atelier</div>
 <h2 style={{ fontSize: 'clamp(28px,5vw,68px)', fontWeight: 400, lineHeight: 1.04, color: 'var(--sand-50)',
-           letterSpacing: '0.02em' }}>Dressed in Florence,<br/>seen on every stage.</h2>
+           letterSpacing: '0.02em' }}>Made in Napoli,<br/>worn for every moment.</h2>
 <p style={{ marginTop: 'var(--space-6)', color: 'rgba(250,247,241,0.82)', fontSize: 'clamp(15px,2.5vw,18px)', maxWidth: 460 }}>
-Period tailoring to contemporary campaigns &mdash; built by hand, fitted to your production.
+Italian craftsmanship, contemporary confidence — designed for the man who values detail, comfort and presence.
 </p>
 </div>
 </div>
