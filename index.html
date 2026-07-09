@@ -415,6 +415,11 @@ h1,h2,h3{margin:0; font-weight:400; line-height:1.05;}
 </footer>
 
 <script>
+/* Всегда открывать страницу сверху (не восстанавливать прокрутку с прошлого визита) */
+if('scrollRestoration' in history){ history.scrollRestoration='manual'; }
+if(!location.hash){ window.scrollTo(0,0); }
+window.addEventListener('pageshow', function(){ if(!location.hash){ window.scrollTo(0,0); } });
+
 const I18N = {
   en:{
     nav_about:"About", nav_philosophy:"Philosophy", nav_boutiques:"Boutiques",
