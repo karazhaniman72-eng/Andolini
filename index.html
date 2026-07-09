@@ -6,6 +6,13 @@
 <title>Andolini — Italian Menswear</title>
 <meta name="description" content="Andolini — Italian menswear for men of distinction. Boutiques in Astana and Almaty.">
 <link rel="icon" href="andolini_logo_hq.png">
+<script>
+/* Всегда открывать сайт сверху, с заголовка. Рано, до отрисовки контента:
+   отключаем восстановление прокрутки и убираем якорь (#philosophy и т.п.),
+   чтобы браузер не прыгал на секцию. */
+if('scrollRestoration' in history){ history.scrollRestoration='manual'; }
+if(location.hash){ history.replaceState(null,'', location.pathname + location.search); }
+</script>
 
 <style>
 /* ── Fonts: Jost + Cormorant Garamond (local woff2) ── */
@@ -415,10 +422,10 @@ h1,h2,h3{margin:0; font-weight:400; line-height:1.05;}
 </footer>
 
 <script>
-/* Всегда открывать страницу сверху (не восстанавливать прокрутку с прошлого визита) */
-if('scrollRestoration' in history){ history.scrollRestoration='manual'; }
-if(!location.hash){ window.scrollTo(0,0); }
-window.addEventListener('pageshow', function(){ if(!location.hash){ window.scrollTo(0,0); } });
+/* Подстраховка: гарантированно прокручиваем к заголовку (см. ранний скрипт в <head>) */
+window.scrollTo(0,0);
+window.addEventListener('load', function(){ window.scrollTo(0,0); });
+window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
 
 const I18N = {
   en:{
