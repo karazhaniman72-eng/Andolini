@@ -47,7 +47,7 @@ if(location.hash){ history.replaceState(null,'', location.pathname + location.se
 /* Казахский: основной шрифт с полной поддержкой букв ә ғ қ ң ө ү һ (Jost их не содержит) */
 html[lang="kz"]{--font-display:'Montserrat',system-ui,sans-serif;}
 *,*::before,*::after{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; scroll-padding-top:74px;}
 body{margin:0; background:var(--sand-50); color:var(--ink-900);
   font-family:var(--font-display); font-weight:300; font-size:17px; line-height:1.6;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;}
@@ -170,6 +170,7 @@ h1,h2,h3{margin:0; font-weight:400; line-height:1.05;}
 }
 @media (max-width:760px){
   body{font-size:16px;}
+  html{scroll-padding-top:64px;}
   .header-inner{height:64px; padding:0 22px;}
   .wordmark-lg{font-size:20px; letter-spacing:.34em;}
   .hero{background-position:72% 18%;}
